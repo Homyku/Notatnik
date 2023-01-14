@@ -1,0 +1,11 @@
+<div *ngIf="!editMode">
+    <button (click)="onEdit()">Edytuj</button>
+</div>
+<div *ngIf="editMode">
+    <form>
+        <input [(ngModel)]="title" name="title" placeholder="Title">
+        <textarea [(ngModel)]="text" name="note"></textarea>
+        <button (click)="onSave()">Save</button>
+        <button (click)="onCancel()">Cancel</button>
+    </form>
+</div>

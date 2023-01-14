@@ -1,0 +1,9 @@
+<div>
+    <form>
+        <input [(ngModel)]="noteTitle" name="title" placeholder="Title" style="text-transform: capitalize;" maxlength="30">
+        <textarea [(ngModel)]="noteText" name="note" placeholder="What you need to do?"></textarea>
+        <button button class="custom-btn btn-2" (click)="addNote()">Add Note</button>
+    </form>
+    <div *ngFor="let note of notes; let i = index">
+        <app-note [note]="note" (delete)="deleteNote(i)"></app-note> </div>
+</div>
