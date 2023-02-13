@@ -2,8 +2,17 @@
     <form>
         <input [(ngModel)]="noteTitle" name="title" placeholder="Title" style="text-transform: capitalize;" maxlength="30">
         <textarea [(ngModel)]="noteText" name="note" placeholder="What you need to do?"></textarea>
-        <button button class="custom-btn btn-2" (click)="addNote()">Add Note</button>
+        <button button class="custom-btn btn-2" (click)="addNote()" [disabled]="!noteTitle || !noteText">Add Note</button>
     </form>
-    <div *ngFor="let note of notes; let i = index">
-        <app-note [note]="note" (delete)="deleteNote(i)"></app-note> </div>
+    <div>
+    <div *ngFor="let note of notes; let i = index" class="note">
+        <div class="letter">
+            <h2>{{ note.title }}</h2> 
+            <p>{{ note.text }}</p> 
+        </div>
+    <div class="deleteBtn"><app-note-delete [note]="note" (deleteEvent)="deleteNote(note)"></app-note-delete>
+      </div>
+      </div>
+    
+</div>
 </div>

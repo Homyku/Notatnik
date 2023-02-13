@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-
+/* import { NoteDeleteComponent } from '../note-delete/note-delete.component';
+ */
 @Component({
   selector: 'app-note-list',
   templateUrl: './note-list.component.html',
@@ -16,7 +17,8 @@ export class NoteListComponent {
         this.noteTitle='';
       }
 
-    deleteNote(index: number) {
-        this.notes.splice(index, 1);
-      }
+      deleteNote(note: {title: string, text: string}) {
+        this.notes = this.notes.filter(n => n !== note);
+    }
+    
 }

@@ -7,14 +7,15 @@ import { NoteComponent } from './note/note.component';
 import { NoteEditComponent } from './note-edit/note-edit.component';
 import { NoteDeleteComponent } from './note-delete/note-delete.component';
 import { FormsModule } from '@angular/forms';
-
+/* import * as mongoose from 'mongoose';
+ */
 @NgModule({
   declarations: [
     AppComponent,
     NoteListComponent,
     NoteComponent,
     NoteEditComponent,
-    NoteDeleteComponent
+    NoteDeleteComponent,
   ],
   imports: [
     BrowserModule,
@@ -23,4 +24,11 @@ import { FormsModule } from '@angular/forms';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  /* constructor() {
+mongoose.connect('mongodb://localhost/nazwa_bazy_danych', { useNewUrlParser: true })
+    .then(() => console.log('Połączenie z MongoDB zostało ustanowione.'))
+    .catch(err => console.error('Nie udało się połączyć z MongoDB:', err)); */
+
+}
+
